@@ -1,0 +1,13 @@
+name: "read version"
+description: "read version from multiple platform"
+inputs:
+  destination:
+    description: "destination"
+    required: false
+    default: "git-tag"
+outputs:
+  version:
+    description: 'The version just read'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
