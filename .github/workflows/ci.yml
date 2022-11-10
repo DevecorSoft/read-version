@@ -1,0 +1,21 @@
+name: ci/cd
+on:
+  push:
+    branches: [main]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Read version
+        id: read_version
+        uses: devecorsoft/read-version@v0
+        with:
+          destination: "node"
+
+      - name: Tag and publish
+        run: |
+          echo ${{ steps.read_version.outputs.version }}
