@@ -12,7 +12,7 @@ jobs:
 
       - name: Read version
         id: read_version
-        uses: devecorsoft/read-version@v0
+        uses: devecorsoft/read-version@main
         with:
           destination: "node"
 
