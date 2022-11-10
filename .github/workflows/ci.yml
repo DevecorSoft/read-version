@@ -4,7 +4,7 @@ on:
     branches: [main]
 
 jobs:
-  preview:
+  read_version_from_node:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,6 +15,24 @@ jobs:
         uses: devecorsoft/read-version@main
         with:
           destination: "node"
+
+      - name: Tag and publish
+        run: |
+          echo ${{ steps.read_version.outputs.version }}
+
+  read_version_from_git_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Read version
+        id: read_version
+        uses: devecorsoft/read-version@main
+        with:
+          destination: "git-tag"
 
       - name: Tag and publish
         run: |
