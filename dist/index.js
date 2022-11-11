@@ -2180,6 +2180,8 @@ function get_target_version(dst) {
     return String.fromCharCode(...execSync("echo -n $(git tag --sort creatordate | tail -n 1)"));
   } else if (dst === "node") {
     return JSON.parse(readFileSync(path.resolve("package.json"), "utf8")).version;
+  } else if (dst === "gradle") {
+    return String.fromCharCode(...execSync("./gradlew properties | grep -e ^version")).split(":")[1].trim();
   } else {
     throw Error(`destination: ${dst} is unknown`);
   }
