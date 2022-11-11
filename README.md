@@ -38,6 +38,18 @@ a github 3rdparty actions that read version from multiple platform.
   run: echo ${{ steps.read_version.outputs.version }}
 ```
 
+## with gradle
+
+```yaml
+- name: Read version
+  uses: devecorsoft/read-version@v0
+  with:
+    destination: "gradle"
+
+- name: Echo version
+  run: echo ${{ steps.read_version.outputs.version }}
+```
+
 # license
 
 MIT
