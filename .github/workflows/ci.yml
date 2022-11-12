@@ -16,7 +16,7 @@ jobs:
         with:
           destination: "node"
 
-      - name: Tag and publish
+      - name: Echo version
         run: |
           echo ${{ steps.read_version.outputs.version }}
 
@@ -32,7 +32,7 @@ jobs:
         with:
           destination: "gradle"
 
-      - name: Tag and publish
+      - name: Echo version
         run: |
           echo ${{ steps.read_version.outputs.version }}
 
@@ -48,7 +48,7 @@ jobs:
         with:
           destination: "pip"
 
-      - name: Tag and publish
+      - name: Echo version
         run: |
           echo ${{ steps.read_version.outputs.version }}
 
@@ -66,6 +66,6 @@ jobs:
         with:
           destination: "git-tag"
 
-      - name: Tag and publish
+      - name: Echo version
         run: |
           echo ${{ steps.read_version.outputs.version }}
