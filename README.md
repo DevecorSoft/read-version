@@ -18,7 +18,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.1.0
+  uses: devecorsoft/read-version@v0.2.0
   with:
     destination: "git-tag"
 
@@ -30,7 +30,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.1.0
+  uses: devecorsoft/read-version@v0.2.0
   with:
     destination: "node"
 
@@ -42,7 +42,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.1.0
+  uses: devecorsoft/read-version@v0.2.0
   with:
     destination: "gradle"
 
@@ -56,7 +56,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.1.0
+  uses: devecorsoft/read-version@v0.2.0
   with:
     destination: "pip"
 
