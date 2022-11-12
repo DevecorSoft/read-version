@@ -2182,6 +2182,8 @@ function get_target_version(dst) {
     return JSON.parse(readFileSync(path.resolve("package.json"), "utf8")).version;
   } else if (dst === "gradle") {
     return String.fromCharCode(...execSync("./gradlew properties | grep -e ^version")).split(":")[1].trim();
+  } else if (dst === "pip") {
+    return String.fromCharCode(...execSync("python setup.py -V"));
   } else {
     throw Error(`destination: ${dst} is unknown`);
   }

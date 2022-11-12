@@ -36,6 +36,22 @@ jobs:
         run: |
           echo ${{ steps.read_version.outputs.version }}
 
+  read_version_from_pip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Read version
+        id: read_version
+        uses: devecorsoft/read-version@main
+        with:
+          destination: "pip"
+
+      - name: Tag and publish
+        run: |
+          echo ${{ steps.read_version.outputs.version }}
+
   read_version_from_git_tag:
     runs-on: ubuntu-latest
     steps:
