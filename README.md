@@ -1,24 +1,15 @@
 # read-version
 
-a github 3rdparty actions that read version from multiple platform.
+a customized github action that read version of your project from multiple platforms, such as `git-tag`, `node`, `gradle` and `pip`.
 
 # Usages
 
 ## with git tags
 
-> :memo: **Note:** keep in mind that this action is working with git tags, so you have to fetch all history for tags with `fetch-depth: 0` when checkout.
-
 ```yaml
-- name: Checkout
-  uses: actions/checkout@v2
-  with:
-    fetch-depth: 0
-
-...
-
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.2.0
+  uses: devecorsoft/read-version@v0.3.0
   with:
     destination: "git-tag"
 
@@ -26,11 +17,13 @@ a github 3rdparty actions that read version from multiple platform.
   run: echo ${{ steps.read_version.outputs.version }}
 ```
 
+> :memo: **Note:** alternatively, to query the version with this command: `git pull -t && git tag --sort creatordate | tail -n 1`.
+
 ## with node
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.2.0
+  uses: devecorsoft/read-version@v0.3.0
   with:
     destination: "node"
 
@@ -42,7 +35,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.2.0
+  uses: devecorsoft/read-version@v0.3.0
   with:
     destination: "gradle"
 
@@ -56,7 +49,7 @@ a github 3rdparty actions that read version from multiple platform.
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.2.0
+  uses: devecorsoft/read-version@v0.3.0
   with:
     destination: "pip"
 
