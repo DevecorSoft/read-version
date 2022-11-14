@@ -9,7 +9,7 @@ a customized github action that read version of your project from multiple platf
 ```yaml
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.3.0
+  uses: devecorsoft/read-version@v0.3.1
   with:
     destination: "git-tag"
 
@@ -17,13 +17,13 @@ a customized github action that read version of your project from multiple platf
   run: echo ${{ steps.read_version.outputs.version }}
 ```
 
-> :memo: **Note:** alternatively, to query the version with this command: `git pull -t && git tag --sort creatordate | tail -n 1`.
+> :memo: **Note:** alternatively, to query the version with this command: `git pull -t > /dev/null && git tag --sort creatordate | tail -n 1`.
 
 ## with node
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.3.0
+  uses: devecorsoft/read-version@v0.3.1
   with:
     destination: "node"
 
@@ -35,7 +35,7 @@ a customized github action that read version of your project from multiple platf
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.3.0
+  uses: devecorsoft/read-version@v0.3.1
   with:
     destination: "gradle"
 
@@ -49,7 +49,7 @@ a customized github action that read version of your project from multiple platf
 
 ```yaml
 - name: Read version
-  uses: devecorsoft/read-version@v0.3.0
+  uses: devecorsoft/read-version@v0.3.1
   with:
     destination: "pip"
 

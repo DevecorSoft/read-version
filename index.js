@@ -13,7 +13,10 @@ try {
 
 function get_target_version(dst) {
     if (dst === "git-tag") {
-        return String.fromCharCode(...execSync("git pull -t && echo -n $(git tag --sort creatordate | tail -n 1)"))
+        return String.fromCharCode(...execSync(
+            "git pull -t > /dev/null && echo -n $(git tag --sort creatordate | tail -n 1)"
+            )
+        )
     } else if (dst === "node") {
         return JSON.parse(readFileSync(path.resolve('package.json'), 'utf8')).version
     } else if (dst === "gradle") {
