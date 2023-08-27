@@ -9,7 +9,7 @@ a customized github action that read version of your project from multiple platf
 ```yaml
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.3.1
+  uses: devecorsoft/read-version@v1
   with:
     destination: "git-tag"
 
@@ -24,7 +24,7 @@ a customized github action that read version of your project from multiple platf
 ```yaml
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.3.1
+  uses: devecorsoft/read-version@v1
   with:
     destination: "node"
 
@@ -37,7 +37,7 @@ a customized github action that read version of your project from multiple platf
 ```yaml
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.3.1
+  uses: devecorsoft/read-version@v1
   with:
     destination: "gradle"
 
@@ -52,7 +52,7 @@ a customized github action that read version of your project from multiple platf
 ```yaml
 - name: Read version
   id: read_version
-  uses: devecorsoft/read-version@v0.3.1
+  uses: devecorsoft/read-version@v1
   with:
     destination: "pip"
 

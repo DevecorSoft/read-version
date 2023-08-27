@@ -20,7 +20,7 @@ function get_target_version(dst) {
     } else if (dst === "node") {
         return JSON.parse(readFileSync(path.resolve('package.json'), 'utf8')).version
     } else if (dst === "gradle") {
-        return String.fromCharCode(...execSync("./gradlew properties | grep -e ^version")).split(":")[1].trim()
+        return String.fromCharCode(...execSync("cat build.gradle* | grep -e ^version")).split("=")[1].trim().slice(1, -1)
     } else if (dst === "pip") {
         return String.fromCharCode(...execSync("python setup.py -V"))
     } else {
