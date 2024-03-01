@@ -2179,7 +2179,7 @@ function get_target_version(dst) {
   if (dst === "git-tag") {
     return String.fromCharCode(
       ...execSync(
-        `git pull -t > /dev/null; echo -n "$(git tag --sort creatordate | tail -n 1)"`
+        `git pull -t > /dev/null; printf '%s' $(git tag --sort creatordate | tail -n 1)`
       )
     );
   } else if (dst === "node") {
